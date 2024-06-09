@@ -22,17 +22,29 @@ Router: Directory for routing (if using Vue Router).
 
 ### v-bind and v-model
 v-bind: A directive that binds an attribute to an expression. It is often used to dynamically bind classes, styles, and other attributes.
+```html 
+<img v-bind:src="imageSrc" alt="Dynamic Image">
+<img :src="dynamicImageUrl">
+<button :class="{'active': isActive}">Button</button>
 
 
 v-model: A directive that creates a two-way binding on an input, textarea, or select element. It keeps the input element in sync with a data property.
-
+```html
+<input v-model="message" placeholder="Enter a message">
+<input v-model="userInput">
+<select v-model="selectedOption">
+  <option value="A">Option A</option>
+  <option value="B">Option B</option>
+</select>
 
 ### Difference between v-if and v-show
 v-if: Renders the element and its children only if the condition is true. If the condition is false, the element is completely removed from the DOM.
-
+```html
+<div v-if="isVisible">Visible content</div>
 
 v-show: Toggles the visibility of the element using CSS display property. The element is always in the DOM but hidden or shown based on the condition.
-
+```html
+<div v-show="isVisible">Visible content</div>
 
 ### Features of Vue.js
 Reactivity System: Automatically updates the DOM when data changes.
