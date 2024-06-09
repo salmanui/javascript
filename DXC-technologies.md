@@ -40,11 +40,11 @@ v-model: A directive that creates a two-way binding on an input, textarea, or se
 v-if: Renders the element and its children only if the condition is true. If the condition is false, the element is completely removed from the DOM.
 ```html
 <div v-if="isVisible">Visible content</div>
-
+```
 v-show: Toggles the visibility of the element using CSS display property. The element is always in the DOM but hidden or shown based on the condition.
 ```html
 <div v-show="isVisible">Visible content</div>
-
+```
 ### Features of Vue.js
 Reactivity System: Automatically updates the DOM when data changes.
 
@@ -106,4 +106,4 @@ div {
   color: blue;
 }
 </style>
-
+```
