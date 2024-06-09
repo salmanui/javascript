@@ -23,27 +23,28 @@ Router: Directory for routing (if using Vue Router).
 ### v-bind and v-model
 v-bind: A directive that binds an attribute to an expression. It is often used to dynamically bind classes, styles, and other attributes.
 
-EX: <img v-bind:src="imageSrc" alt="Dynamic Image">
 
 v-model: A directive that creates a two-way binding on an input, textarea, or select element. It keeps the input element in sync with a data property.
 
-EX: <input v-model="message" placeholder="Enter a message">
 
 ### Difference between v-if and v-show
 v-if: Renders the element and its children only if the condition is true. If the condition is false, the element is completely removed from the DOM.
 
-Ex: <div v-if="isVisible">Visible content</div>
 
 v-show: Toggles the visibility of the element using CSS display property. The element is always in the DOM but hidden or shown based on the condition.
 
-Ex: <div v-show="isVisible">Visible content</div>
 
 ### Features of Vue.js
 Reactivity System: Automatically updates the DOM when data changes.
+
 Component-Based Architecture: Encapsulate HTML, CSS, and JavaScript in reusable components.
+
 Directives: Built-in directives for binding data to the DOM.
+
 Vue CLI: Command-line interface for scaffolding and managing projects.
+
 Vue Router: Official router for Vue.js for building single-page applications.
+
 Vuex: State management library for managing shared state.
 
 ### File Structure of a Vue.js Project
@@ -74,22 +75,3 @@ Script: JavaScript part, including data, methods, computed properties, and lifec
 
 Style: CSS styles scoped to the component.
 
-Ex: <template>
-  <div>{{ message }}</div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      message: 'Hello, Vue!'
-    };
-  }
-}
-</script>
-
-<style scoped>
-div {
-  color: blue;
-}
-</style>
