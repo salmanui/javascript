@@ -91,14 +91,14 @@ what is differnce bw DOM and Virtual DOM?
 
 ## Innominds (Deloitte client)
 
-Search function to filter data.
-Sort 
-Reverse String
-String is Palidrome
-Promises usecase without async/await
-Promises usecase with async/await
-Array concepts 
-clousers
-call,apply,bind
-Redux
-pagnation
+######  Search function to filter data.
+###### Sort 
+###### Reverse String
+###### String is Palidrome
+###### Promises usecase without async/await
+###### Promises usecase with async/await
+###### Array concepts 
+###### clousers
+###### call,apply,bind
+###### Redux
+###### pagnation
