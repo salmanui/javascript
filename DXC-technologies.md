@@ -26,8 +26,7 @@ v-bind: A directive that binds an attribute to an expression. It is often used t
 <img v-bind:src="imageSrc" alt="Dynamic Image">
 <img :src="dynamicImageUrl">
 <button :class="{'active': isActive}">Button</button>
-
-
+```
 v-model: A directive that creates a two-way binding on an input, textarea, or select element. It keeps the input element in sync with a data property.
 ```html
 <input v-model="message" placeholder="Enter a message">
@@ -36,7 +35,7 @@ v-model: A directive that creates a two-way binding on an input, textarea, or se
   <option value="A">Option A</option>
   <option value="B">Option B</option>
 </select>
-
+```
 ### Difference between v-if and v-show
 v-if: Renders the element and its children only if the condition is true. If the condition is false, the element is completely removed from the DOM.
 ```html
