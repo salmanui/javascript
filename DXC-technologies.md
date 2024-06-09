@@ -75,3 +75,24 @@ Script: JavaScript part, including data, methods, computed properties, and lifec
 
 Style: CSS styles scoped to the component.
 
+```vue
+<template>
+  <div>{{ message }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: 'Hello, Vue!'
+    };
+  }
+}
+</script>
+
+<style scoped>
+div {
+  color: blue;
+}
+</style>
+
