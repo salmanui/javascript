@@ -1,4 +1,4 @@
-# Interview questions
+# JavaScript and Vuejs Interview questions
 
 ### What is Vue.js?
 Vue.js is a progressive JavaScript framework used for building user interfaces and single-page applications. It is designed to be incrementally adoptable, meaning you can use it as a library to enhance parts of an existing project or as a full-featured framework to build complex applications. Vue.js is known for its simplicity, flexibility, and ease of integration with other projects and libraries.
@@ -107,3 +107,118 @@ div {
 }
 </style>
 ```
+### What is Webpack Loader?
+Webpack loaders are used to preprocess files as they are loaded into your project. They allow you to bundle and transform files other than JavaScript, such as CSS, HTML, and images, by specifying rules that dictate how different types of files should be handled during the build process. For example, you can use loaders to transpile modern JavaScript (ES6) down to ES5 using Babel, or to compile SCSS into CSS.
+
+### How to Fetch Data Using Vue and Display?
+To fetch data in a Vue component and display it, you can use the mounted lifecycle hook to make an API call and then store the data in the component's data object. Here's an example:
+
+```vue
+<template>
+  <div>
+    <ul>
+      <li v-for="item in items" :key="item.id">{{ item.name }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: []
+    };
+  },
+  mounted() {
+    fetch('https://api.example.com/items')
+      .then(response => response.json())
+      .then(data => {
+        this.items = data;
+      });
+  }
+};
+</script>
+```
+### What is the ? in data?.length?
+The ? in data?.length is the optional chaining operator. It allows you to safely access deeply nested properties of an object without having to explicitly check for the existence of each property in the chain. If any part of the chain is null or undefined, it returns undefined instead of throwing an error.
+
+### What is Vuex/Store?
+Vuex is a state management library for Vue.js applications. It provides a centralized store for all the components in an application, allowing you to manage the state in a predictable way. The store includes state, mutations, actions, and getters to handle data flow and changes.
+
+### How to Override Element Default Styles?
+To override default styles, you can use CSS with higher specificity or use the !important flag. For Vue components, you can also use scoped styles to apply styles only to a specific component. Here's an example of overriding styles in a scoped manner.
+##### Example
+```html
+<template>
+  <button class="custom-button">Click me</button>
+</template>
+
+<style scoped>
+.custom-button {
+  background-color: blue;
+  color: white;
+}
+</style>
+```
+### What are Scoped Styles?
+Scoped styles in Vue ensure that the styles defined in a component only apply to that component. This is done by adding the scoped attribute to the <style> tag in a single-file component. Scoped styles use a unique attribute on elements and styles to prevent them from affecting other components.
+
+### What is Parent to Child Communication?
+Parent to child communication in Vue involves passing data from a parent component to a child component via props. The parent component provides data to the child component as an attribute, which the child component receives as a prop.
+##### Example
+```vue
+<!-- ParentComponent.vue -->
+<template>
+  <ChildComponent :message="parentMessage" />
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: {
+    ChildComponent
+  },
+  data() {
+    return {
+      parentMessage: 'Hello from parent'
+    };
+  }
+};
+</script>
+
+<!-- ChildComponent.vue -->
+<template>
+  <p>{{ message }}</p>
+</template>
+
+<script>
+export default {
+  props: {
+    message: String
+  }
+};
+</script>
+```
+
+### What is a Watch Hook?
+The watch hook in Vue is used to reactively monitor changes to a specific data property or computed property and execute a callback when the property changes.
+
+```vue
+export default {
+  data() {
+    return {
+      counter: 0
+    };
+  },
+  watch: {
+    counter(newValue, oldValue) {
+      console.log(`Counter changed from ${oldValue} to ${newValue}`);
+    }
+  }
+};
+```
+
+### What is the Difference Between Sync and Async?
+Sync (synchronous) operations are executed sequentially, blocking the next operation until the current one completes.
+Async (asynchronous) operations allow
