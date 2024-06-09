@@ -1,4 +1,4 @@
-# DXC technologies interview questions
+# Interview questions
 
 ### What is Vue.js?
 Vue.js is a progressive JavaScript framework used for building user interfaces and single-page applications. It is designed to be incrementally adoptable, meaning you can use it as a library to enhance parts of an existing project or as a full-featured framework to build complex applications. Vue.js is known for its simplicity, flexibility, and ease of integration with other projects and libraries.
