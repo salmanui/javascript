@@ -165,6 +165,23 @@ for (let i = str1.length - 1; i >= 0; i--) {
 }
 
 console.log("After String Reverse:", strReverse1);
+//Double the array
+let arr = [1,2,3,4,5,6,7,8,9,10];
+let doubleArr = arr.map((num)=>num*2);
+console.log(doubleArr);
+
+// calculate sum of all prices for the array below
+const products = [
+  { name: 'Product A', price: 10 },
+  { name: 'Product B', price: 20 },
+  { name: 'Product C', price: 30 },
+  { name: 'Product D', price: 40 },
+];
+
+const totalPrice = products.reduce((sum, product)=> sum + product.price, 0);
+console.log("Total Price:", totalPrice);
+
+
 
 function fetchData(callback) {
   setTimeout(() => {
