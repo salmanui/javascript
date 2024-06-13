@@ -312,3 +312,8 @@ let exchangeRate = 0.013; // Example exchange rate
 let usdAmount = convertINRtoUSD(inrAmount, exchangeRate);
 console.log(`${inrAmount} INR is equal to ${usdAmount} USD.`);
 ```
+
+#### In JavaScript, map() is a method of the Array object. It creates a new array by calling a function on every element of the original array and storing the results in a new array
+#### The filter() method creates a new array filled with elements that pass a test provided by a function. The filter() method does not execute the function for empty elements.
+#### JavaScript reduce() is a higher order function used in data manipulation that reduces an array to a single value. It takes two parameters: an accumulator and the current element of an array.
+
