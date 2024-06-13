@@ -110,3 +110,15 @@ for (var i = 0; i < 3; i++) {
 }
 // Output: 0 1 2
 //One common way to do this is by using an immediately-invoked function expression (IIFE).
+
+//Program to Convert Currency from Indian Rupees (INR) to US Dollars (USD)
+function convertINRtoUSD(inr, exchangeRate) {
+  // Exchange rate should be the value of 1 INR in USD
+  return inr * exchangeRate;
+}
+
+// Example usage:
+let inrAmount = 1000;
+let exchangeRate = 0.013; // Example exchange rate
+let usdAmount = convertINRtoUSD(inrAmount, exchangeRate);
+console.log(`${inrAmount} INR is equal to ${usdAmount} USD.`);

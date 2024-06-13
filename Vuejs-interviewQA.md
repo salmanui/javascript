@@ -9,7 +9,15 @@ Slots in Vue.js are a feature that allows you to pass content into a component f
 Default Slot: For basic content insertion.
 Named Slots: For more specific and organized content insertion.
 Scoped Slots: For passing data from the child component to the parent and customizing the slot content based on that data.
-
+```vue
+<template>
+  <div>
+    <slot name="header"></slot>
+    <p>This is the main content.</p>
+    <slot name="footer"></slot>
+  </div>
+</template>
+```
 ### Structure of Vue.js
 A typical Vue.js project structure includes:
 
@@ -186,7 +194,8 @@ export default {
   }
 };
 </script>
-
+```
+```vue
 <!-- ChildComponent.vue -->
 <template>
   <p>{{ message }}</p>
@@ -222,3 +231,84 @@ export default {
 ### What is the Difference Between Sync and Async?
 Sync (synchronous) operations are executed sequentially, blocking the next operation until the current one completes.
 Async (asynchronous) operations allow
+
+### Difference between var, let, and const
+var:
+Function-scoped.
+Can be redeclared and updated.
+Hoisted to the top of their scope but not initialized.
+```javascript
+var x = 10;
+if (true) {
+  var x = 20;
+  console.log(x); // 20
+}
+console.log(x); // 20
+```
+let:
+Block-scoped.
+Cannot be redeclared within the same scope but can be updated.
+Hoisted to the top of their scope but not initialized.
+```javascript
+let y = 10;
+if (true) {
+  let y = 20;
+  console.log(y); // 20
+}
+console.log(y); // 10
+```
+const:
+Block-scoped.
+Cannot be redeclared or updated.
+Must be initialized at the time of declaration.
+```javascript
+const z = 10;
+if (true) {
+  const z = 20;
+  console.log(z); // 20
+}
+console.log(z); // 10
+```
+### Ways to declare an object
+Using object literal:
+```javascript
+const obj1 = {};
+```
+Using new Object():
+```javascript
+const obj2 = new Object();
+```
+Using a constructor function:
+```javascript
+function Person(name) {
+  this.name = name;
+}
+const obj3 = new Person('John');
+```
+Using Object.create():
+```javascript
+const proto = { greet: function() { return 'Hello'; } };
+const obj4 = Object.create(proto);
+```
+### Ways to access the document in JavaScript
+```javascript
+document.getElementById('myId');
+document.getElementsByClassName('myClass');
+document.getElementsByTagName('div');
+document.querySelector('.myClass');
+document.querySelectorAll('div');
+```
+
+### Program to Convert Currency from Indian Rupees (INR) to US Dollars (USD)
+```javascript
+function convertINRtoUSD(inr, exchangeRate) {
+    // Exchange rate should be the value of 1 INR in USD
+    return inr * exchangeRate;
+}
+
+// Example usage:
+let inrAmount = 1000;
+let exchangeRate = 0.013; // Example exchange rate
+let usdAmount = convertINRtoUSD(inrAmount, exchangeRate);
+console.log(`${inrAmount} INR is equal to ${usdAmount} USD.`);
+```
