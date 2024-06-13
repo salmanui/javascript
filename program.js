@@ -152,3 +152,24 @@ async function fetchData() {
   }
 }
 fetchData();
+//Valuelabs
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdown = document.getElementById('myDropdown');
+
+  const fetchDataToDropdown = async () => {
+    try {
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
+      const data = await response.json();
+
+      data.results.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item.name;
+        option.textContent = item.name;
+        dropdown.appendChild(option);
+      });
+    } catch (error) {
+      console.error("Error while fetching data:", error);
+    }
+  };
+  fetchDataToDropdown();
+});
