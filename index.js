@@ -64,3 +64,44 @@ console.log(j);
   const j = "john";
   //   const j = "deo";
 }
+function sum(num1,num2){
+  let sumNum = num1+num2;
+  console.log(sumNum);
+}
+sum(4,5);
+
+let array = [2,8,7,10,20,55];
+let maxArray = Math.max(...array);
+console.log(maxArray);
+
+let str = "racecar";
+let isPalindrome = str.split("").reverse().join("");
+if(str === isPalindrome){
+  console.log(str, "is a Palindrome");
+}else{
+  console.log(str, "is not Palindrome");
+}
+
+let string = "Sameeya";
+let strReverse = string.split("").reverse().join("");
+console.log(strReverse);
+
+function factorial(number){
+ if(number === 0 || number === 1){
+   return 1;
+ }else{
+   return number*factorial(number-1);
+ }
+}
+console.log(factorial(4));
+
+function primeNum(num) {
+for(let i = 2; i<Math.sqrt(num);i++){
+  if(num% i === 0){
+    console.log(num,"is not a prime number");
+    return;
+  }
+}
+console.log(num, "is prime number");
+}
+primeNum(101);
