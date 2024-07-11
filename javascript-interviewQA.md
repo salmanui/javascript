@@ -1,38 +1,31 @@
 # JavaScript Common Interview questions
 
-### What is the difference between var,let and const?
+### 1. What is the difference between var,let and const?
 
 var is function-scoped and variables can be redeclared and updated.
 let is block-scoped and variables can be updated but not redeclared.
 const is also block-scoped and variables cannot be updated or redeclared.
 
 
-### What are the data types in Javascript?
+### 2. What are the data types in Javascript?
 
 In Javascript we have two types of data types where as primitive data types and non primitive data types.
 In primitive data types we have:
 
 ###### string
-
 ###### number
-
 ###### boolean
-
 ###### null
-
 ###### undefined
-
 ###### symbol
 
 other hand we have:
 
 ###### objects
-
 ###### arrays
-
 ###### functions
 
-### What is the difference between null and undefined?
+### 3. What is the difference between null and undefined?
 
 ###### Null
 
@@ -42,11 +35,11 @@ In Javascript null represents the intentional absence of any object value.
 
 In Javascript undefined represents the absence of value or the value has not been assigned yet.
 
-### What is the difference between == and === operators?
+### 4. What is the difference between == and === operators?
 
 == checks for equality of values after type coercion, while === checks for equality of values without type coercion also know as strict equality.
 
-### What is closure in javascript?
+### 5. What is closure in javascript?
 
 In Javascript closure is a function defined inside another function and has access to the outer function's variables. It has access to it's own scope, the outer function's scope and the global scope.
 
@@ -78,7 +71,7 @@ const multiplyNumber = multiply(2)(5);
 console.log(multiplyNumber);
 ```
 
-### What is event delegation in javascript?
+### 6. What is event delegation in javascript?
 
 Event delegation is a technique where you attach an event listener to a parent element instead of multiple child elements. It will handle it based on the target element.
 
@@ -103,7 +96,7 @@ parentList.addEventListener("click", function (event) {
 });
 ```
 
-### What is callback function?
+### 7. What is callback function?
 
 A callback function is a function passed as an arguments to another function to be executed later. It is commonly used in asynchronous programming and event handling.
 
@@ -123,7 +116,7 @@ function sayGoodbye() {
 greet("Sameeya", sayGoodbye);
 ```
 
-### Explain the concept of hoisting?
+### 8. Explain the concept of hoisting?
 
 Hosting is a javascript mechanism where variables and function declarations are moved to the top of their containing scope during the compilations phase,before the code execution.
 
@@ -139,7 +132,7 @@ function myFunction() {
 }
 ```
 
-### What is event bubbling and capturing in javascript?
+### 9. What is event bubbling and capturing in javascript?
 
 Event bubbling is the process where the event starts at the inner most traget element and then bubbles up the DOM hierachy until it reachs to the root element.
 Event capturing is the oppsite, where the event starts at the root element and then trickles down to the traget element.
@@ -181,11 +174,11 @@ Event capturing is the oppsite, where the event starts at the root element and t
 </html>
 ```
 
-### Explain the this keyword in javascript?
+### 10. Explain the this keyword in javascript?
 
 this keyword refers to the object to which a function or method belongs, depending on how the function is called.It can change its value based on how a function is invoked.
 
-### What is a promise in javascript?
+### 11. What is a promise in javascript?
 
 A promise is an object representing the eventual completion or failure of an asynchronous operation. It allows you to handle asynchronous operations more elegently then using callbacks and provides methods for handling success and failure.
 
@@ -218,7 +211,7 @@ fetchData()
   });
 ```
 
-### What is the async/await feature in javascript?
+### 12. What is the async/await feature in javascript?
 
 In javascript async/await is a syntatic for writing asynchronous code like synchronous manner. async functions return a promise, and await can be used inside the functions to pause the execution until the promise is resolved.
 
@@ -275,7 +268,7 @@ In javascript async/await is a syntatic for writing asynchronous code like synch
 </html>
 ```
 
-### What is the spread operator in javascript?
+### 13. What is the spread operator in javascript?
 
 The spread operator(...) allows an iterable like array or string to be expanded into individual elements.
 It is commonly used for array literals,function arguments, and object literals.
@@ -337,7 +330,7 @@ const mergedObject = { ...obj1, ...obj2 };
 console.log(mergedObject); // Output: { a: 1, b: 3, c: 4 }
 ```
 
-#### In JavaScript what is the purpose of map() method?
+#### 14. In JavaScript what is the purpose of map() method?
 In javascript map() is a method of the Array object. It creates a new array by calling a function on every element of the original array and storing the results in a new array
 
 ```javascript
@@ -355,7 +348,7 @@ console.log(userNames); // Output: ['Alice', 'Bob', 'Charlie']
 
 ```
 
-#### In JavaScript what is the purpose of filter() method?
+#### 15.  In JavaScript what is the purpose of filter() method?
  The filter() method creates a new array filled with elements that pass a test provided by a function. The filter() method does not execute the function for empty elements.
 
  ```javascript
@@ -377,7 +370,7 @@ console.log(productNamesInStock); // Output: ['Laptop', 'Tablet', 'Keyboard']
 
  ```
 
-#### In JavaScript what is the purpose of reduce() method? 
+####  16. In JavaScript what is the purpose of reduce() method? 
  In javascript reduce() is a higher order function used in data manipulation that reduces an array to a single value. It takes two parameters: an accumulator and the current element of an array.
  ```javascript
  // Array of transaction objects
@@ -408,7 +401,7 @@ console.log(sentence); // Output: "JavaScript is a powerful language"
  ```
 
 
-#### In JavaScript what is the purpose of sort() method? 
+#### 17. In JavaScript what is the purpose of sort() method? 
  In javascript sort() methods sorts the elements of an array in place and returns the sorted array. By default, it sorts elements as strings and converts elements to strings before comparing them.
 
  ```javascript

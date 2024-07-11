@@ -1,9 +1,9 @@
-# JavaScript and Vuejs Interview questions
+# Vuejs Interview questions
 
-### What is Vue.js?
+### 1. What is Vue.js?
 Vue.js is a progressive JavaScript framework used for building user interfaces and single-page applications. It is designed to be incrementally adoptable, meaning you can use it as a library to enhance parts of an existing project or as a full-featured framework to build complex applications. Vue.js is known for its simplicity, flexibility, and ease of integration with other projects and libraries.
 
-### Slots in Vue.js
+### 2. Slots in Vue.js
 Slots in Vue.js are a feature that allows you to pass content into a component from the outside, similar to the concept of "transclusion" in other frameworks. They enable you to create reusable components with customizable content. There are three types of slots:
 
 Default Slot: For basic content insertion.
@@ -18,7 +18,7 @@ Scoped Slots: For passing data from the child component to the parent and custom
   </div>
 </template>
 ```
-### Structure of Vue.js
+### 3. Structure of Vue.js
 A typical Vue.js project structure includes:
 
 main.js: The entry point of the application where the Vue instance is created and the root component is mounted.
@@ -28,7 +28,7 @@ Assets: Directory for static assets like images and styles.
 Store: Directory for state management (if using Vuex).
 Router: Directory for routing (if using Vue Router).
 
-### v-bind and v-model
+### 4. v-bind and v-model
 v-bind: A directive that binds an attribute to an expression. It is often used to dynamically bind classes, styles, and other attributes.
 ```html 
 <img v-bind:src="imageSrc" alt="Dynamic Image">
@@ -44,7 +44,7 @@ v-model: A directive that creates a two-way binding on an input, textarea, or se
   <option value="B">Option B</option>
 </select>
 ```
-### Difference between v-if and v-show
+### 5. Difference between v-if and v-show
 v-if: Renders the element and its children only if the condition is true. If the condition is false, the element is completely removed from the DOM.
 ```html
 <div v-if="isVisible">Visible content</div>
@@ -53,7 +53,7 @@ v-show: Toggles the visibility of the element using CSS display property. The el
 ```html
 <div v-show="isVisible">Visible content</div>
 ```
-### Features of Vue.js
+### 6. Features of Vue.js
 Reactivity System: Automatically updates the DOM when data changes.
 
 Component-Based Architecture: Encapsulate HTML, CSS, and JavaScript in reusable components.
@@ -66,7 +66,7 @@ Vue Router: Official router for Vue.js for building single-page applications.
 
 Vuex: State management library for managing shared state.
 
-### File Structure of a Vue.js Project
+### 7. File Structure of a Vue.js Project
 src/: Source files
 
 main.js: Entry point
@@ -85,7 +85,7 @@ public/: Public files
 
 package.json: Project metadata and dependencies
 
-### Content in Vue.js
+### 8. Content in Vue.js
 Content in Vue.js typically refers to the data, methods, computed properties, and lifecycle hooks defined within a Vue component. A Vue component usually consists of:
 
 Template: HTML structure of the component.
@@ -115,10 +115,10 @@ div {
 }
 </style>
 ```
-### What is Webpack Loader?
+### 9. What is Webpack Loader?
 Webpack loaders are used to preprocess files as they are loaded into your project. They allow you to bundle and transform files other than JavaScript, such as CSS, HTML, and images, by specifying rules that dictate how different types of files should be handled during the build process. For example, you can use loaders to transpile modern JavaScript (ES6) down to ES5 using Babel, or to compile SCSS into CSS.
 
-### How to Fetch Data Using Vue and Display?
+### 10. How to Fetch Data Using Vue and Display?
 To fetch data in a Vue component and display it, you can use the mounted lifecycle hook to make an API call and then store the data in the component's data object. Here's an example:
 
 ```vue
@@ -147,13 +147,13 @@ export default {
 };
 </script>
 ```
-### What is the ? in data?.length?
+### 11. What is the ? in data?.length?
 The ? in data?.length is the optional chaining operator. It allows you to safely access deeply nested properties of an object without having to explicitly check for the existence of each property in the chain. If any part of the chain is null or undefined, it returns undefined instead of throwing an error.
 
-### What is Vuex/Store?
+### 12. What is Vuex/Store?
 Vuex is a state management library for Vue.js applications. It provides a centralized store for all the components in an application, allowing you to manage the state in a predictable way. The store includes state, mutations, actions, and getters to handle data flow and changes.
 
-### How to Override Element Default Styles?
+### 13. How to Override Element Default Styles?
 To override default styles, you can use CSS with higher specificity or use the !important flag. For Vue components, you can also use scoped styles to apply styles only to a specific component. Here's an example of overriding styles in a scoped manner.
 ##### Example
 ```html
@@ -168,10 +168,10 @@ To override default styles, you can use CSS with higher specificity or use the !
 }
 </style>
 ```
-### What are Scoped Styles?
+### 14. What are Scoped Styles?
 Scoped styles in Vue ensure that the styles defined in a component only apply to that component. This is done by adding the scoped attribute to the <style> tag in a single-file component. Scoped styles use a unique attribute on elements and styles to prevent them from affecting other components.
 
-### What is Parent to Child Communication?
+### 15. What is Parent to Child Communication?
 Parent to child communication in Vue involves passing data from a parent component to a child component via props. The parent component provides data to the child component as an attribute, which the child component receives as a prop.
 ##### Example
 ```vue
@@ -210,7 +210,7 @@ export default {
 </script>
 ```
 
-### What is a Watch Hook?
+### 16. What is a Watch Hook?
 The watch hook in Vue is used to reactively monitor changes to a specific data property or computed property and execute a callback when the property changes.
 
 ```vue
@@ -227,93 +227,3 @@ export default {
   }
 };
 ```
-
-### What is the Difference Between Sync and Async?
-Sync (synchronous) operations are executed sequentially, blocking the next operation until the current one completes.
-Async (asynchronous) operations allow
-
-### Difference between var, let, and const
-var:
-Function-scoped.
-Can be redeclared and updated.
-Hoisted to the top of their scope but not initialized.
-```javascript
-var x = 10;
-if (true) {
-  var x = 20;
-  console.log(x); // 20
-}
-console.log(x); // 20
-```
-let:
-Block-scoped.
-Cannot be redeclared within the same scope but can be updated.
-Hoisted to the top of their scope but not initialized.
-```javascript
-let y = 10;
-if (true) {
-  let y = 20;
-  console.log(y); // 20
-}
-console.log(y); // 10
-```
-const:
-Block-scoped.
-Cannot be redeclared or updated.
-Must be initialized at the time of declaration.
-```javascript
-const z = 10;
-if (true) {
-  const z = 20;
-  console.log(z); // 20
-}
-console.log(z); // 10
-```
-### Ways to declare an object
-Using object literal:
-```javascript
-const obj1 = {};
-```
-Using new Object():
-```javascript
-const obj2 = new Object();
-```
-Using a constructor function:
-```javascript
-function Person(name) {
-  this.name = name;
-}
-const obj3 = new Person('John');
-```
-Using Object.create():
-```javascript
-const proto = { greet: function() { return 'Hello'; } };
-const obj4 = Object.create(proto);
-```
-### Ways to access the document in JavaScript
-```javascript
-document.getElementById('myId');
-document.getElementsByClassName('myClass');
-document.getElementsByTagName('div');
-document.querySelector('.myClass');
-document.querySelectorAll('div');
-```
-
-### Program to Convert Currency from Indian Rupees (INR) to US Dollars (USD)
-```javascript
-function convertINRtoUSD(inr, exchangeRate) {
-    // Exchange rate should be the value of 1 INR in USD
-    return inr * exchangeRate;
-}
-
-// Example usage:
-let inrAmount = 1000;
-let exchangeRate = 0.013; // Example exchange rate
-let usdAmount = convertINRtoUSD(inrAmount, exchangeRate);
-console.log(`${inrAmount} INR is equal to ${usdAmount} USD.`);
-```
-
-#### In JavaScript, map() is a method of the Array object. It creates a new array by calling a function on every element of the original array and storing the results in a new array
-#### The filter() method creates a new array filled with elements that pass a test provided by a function. The filter() method does not execute the function for empty elements.
-#### JavaScript reduce() is a higher order function used in data manipulation that reduces an array to a single value. It takes two parameters: an accumulator and the current element of an array.
-
