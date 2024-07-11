@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic CSS with :is()</title>
+        <style>
+        /* Applying styles to multiple selectors */
+        :is(h1, h2, h3) {
+            font-family: 'Arial', sans-serif;
+            color: darkblue;
+            text-align: center;
+        }
+
+        /* Styling links in different states */
+        a:is(:link, :visited) {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:is(:hover, :focus, :active) {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* Simplifying complex selectors */
+        :is(nav, footer) ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        :is(nav, footer) ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        /* Media query using :is() */
+        @media (max-width: 600px) {
+            :is(nav, footer) ul li {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        .empty-div {
+            border: 1px solid red;
+            background-color: rgba(255, 0, 0, 0.475);
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        .empty-div:empty{
+            display: none;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="empty-div">Div 1</div>
+        <div class="empty-div"></div> <!-- This will be hidden -->
+        <div class="empty-div">Div 3</div>
+        <div class="empty-div"></div> <!-- This will be hidden -->
+        <div class="empty-div">Div 5</div>
+        <div class="empty-div"></div> <!-- This will be hidden -->
+        <div class="empty-div">Div 7</div>
+        <div class="empty-div">Div 8</div>
+        <header>
+            <h1>Welcome to My Website</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h2>About Us</h2>
+            <p>This is a section about us.</p>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </footer>
+        <button class="button-primary">Primary Button</button>
+        <button class="button-secondary">Secondary Button</button>
+        <button class="button-success">Success Button</button>
+        <button class="button-danger">Danger Button</button>
+        <script>
+            //write a program to sort array of elements and move zeros to end
+            let arr = [1,0,3,0,5,6,0,0,8];
+            let zeros = arr.filter(num=> num === 0);
+            let nonZeros = arr.filter(num => num !== 0);
+            nonZeros.sort((a,b)=> a - b);
+            let sortedArr = nonZeros.concat(zeros);
+            console.log(sortedArr);
+        </script>
+    </body>
+</html>

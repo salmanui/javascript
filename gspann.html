@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Hello, World!</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <select id="myDropdown">
-<option value="">Select an option</option>
-</select>
-      <ul id="myList">
-        <li>One</li>
-        <li>two</li>
-        <li>three</li>
-        <li>four</li>
-        <li>five</li>
-      </ul>
-      <script>
-        const listItems = document.getElementById('myList');
-        listItems.addEventListener('click', (event)=> {
-          if(event.target){
-            console.log("",event);
-          }
-        });
-        let arr = [1,2,3,4,5,6,7,8,9,10];
+      <option value>Select an option</option>
+    </select>
+    <ul id="myList">
+      <li>One</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+      <li>five</li>
+    </ul>
+    <!-- <select id="selectdropdown" style="display: none;"></select> -->
+    <script>
+    const listItems = document.getElementById('myList');
+    listItems.addEventListener('click', (event) => {
+      if (event.target) {
+        console.log("", event);
+      }
+    });
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-let doubleArr = arr.map((num)=>num*2);
-console.log(doubleArr);
+    let doubleArr = arr.map((num) => num * 2);
+    console.log(doubleArr);
 
-// calculate sum of all prices for the array above
-const products = [
-  { name: 'Product A', price: 10 },
-  { name: 'Product B', price: 20 },
-  { name: 'Product C', price: 30 },
-  { name: 'Product D', price: 40 },
-];
+    // calculate sum of all prices for the array above
+    const products = [
+      { name: 'Product A', price: 10 },
+      { name: 'Product B', price: 20 },
+      { name: 'Product C', price: 30 },
+      { name: 'Product D', price: 40 },
+    ];
 
-const totalPrice = products.reduce((sum, product)=> sum + product.price,0);
-console.log("Total Price:", totalPrice);
-      </script>
+    const totalPrice = products.reduce((sum, product) => sum + product.price, 0);
+    console.log("Total Price:", totalPrice);
+
+    //dropdown normal json
+    // let select = document.getElementById("selectdropdown");
+    // let optionLists = [
+    //     {
+    //         name: "UI Developer",
+    //     },
+    //     {
+    //         name: "UI/UX Developer",
+    //     },
+    //     {
+    //         name: "UI/UX Designer",
+    //     },
+    // ];
+    // optionLists.forEach((item) => {
+    //     let option = document.createElement("option");
+    //     option.textContent = item.name;
+    //     select.appendChild(option);
+    // });
+  </script>
     <script src="/program.js"></script>
   </body>
+
 </html>

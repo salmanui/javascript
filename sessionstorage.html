@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sessionStorage Example</title>
+        <script>
+        function saveToSessionStorage() {
+            sessionStorage.setItem('sessionUser', 'Sameeya');
+        }
+
+        function getFromSessionStorage() {
+            const sessionUser = sessionStorage.getItem('sessionUser');
+            alert(`Username from sessionStorage: ${sessionUser}`);
+        }
+
+        function removeFromSessionStorage() {
+            sessionStorage.removeItem('sessionUser');
+        }
+    </script>
+    </head>
+    <body>
+        <button onclick="saveToSessionStorage()">Save to sessionStorage</button>
+        <button onclick="getFromSessionStorage()">Get from
+            sessionStorage</button>
+        <button onclick="removeFromSessionStorage()">Remove from
+            sessionStorage</button>
+    </body>
+</html>

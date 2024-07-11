@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LocalStorage Example</title>
+    </head>
+
+    <body>
+        <button onclick="saveToLocalStorage()">Save to localStorage</button>
+        <button onclick="getFromLocalStorage()">Get from localStorage</button>
+        <button onclick="removeFromLocalStorage()">Remove from
+            localStorage</button>
+        <script>
+      function saveToLocalStorage() {
+        localStorage.setItem("username", "Mohammad Salman");
+      }
+      function getFromLocalStorage() {
+        const username = localStorage.getItem("username");
+        alert(`User name from LocalStorage: ${username}`);
+      }
+      function removeFromLocalStorage() {
+        localStorage.removeItem("username");
+      }
+    </script>
+    </body>
+</html>

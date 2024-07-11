@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OTP Generation Example</title>
+        <style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-group input[type="tel"] {
+        width: calc(100% - 10px);
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-group button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .form-group button:hover {
+        background-color: #0056b3;
+    }
+</style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>OTP Generation Example</h2>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber"
+                    placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <button id="generateOTP">Generate OTP</button>
+            </div>
+            <div class="form-group">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" placeholder="Enter OTP received">
+            </div>
+            <div class="form-group">
+                <button id="verifyOTP">Verify OTP</button>
+            </div>
+            <p id="otpStatus"></p>
+        </div>
+
+        <script>
+    // Function to generate a random 6-digit OTP
+    function generateOTP() {
+        return Math.floor(1000 + Math.random() * 9000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const generateOTPButton = document.getElementById('generateOTP');
+        const verifyOTPButton = document.getElementById('verifyOTP');
+        const phoneNumberInput = document.getElementById('phoneNumber');
+        const otpInput = document.getElementById('otp');
+        const otpStatusMessage = document.getElementById('otpStatus');
+
+        let otpCode = null;
+
+        generateOTPButton.addEventListener('click', function() {
+            const phoneNumber = phoneNumberInput.value.trim();
+            if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
+            otpCode = generateOTP();
+            alert(`OTP sent to ${phoneNumber}: ${otpCode}`);
+        });
+
+        verifyOTPButton.addEventListener('click', function() {
+            const enteredOTP = otpInput.value.trim();
+            if (enteredOTP === otpCode.toString()) {
+                otpStatusMessage.textContent = 'OTP Verified successfully.';
+                otpStatusMessage.style.color = 'green';
+            } else {
+                otpStatusMessage.textContent = 'OTP Verification failed. Please try again.';
+                otpStatusMessage.style.color = 'red';
+            }
+        });
+    });
+</script>
+
+    </body>
+</html>
