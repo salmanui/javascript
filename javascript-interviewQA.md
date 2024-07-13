@@ -429,3 +429,28 @@ console.log(products);
 //   { id: 5, name: 'Keyboard', price: 500 }
 // ]
  ```
+#### Shallow Copy
+A shallow copy creates a new object or array, but it only copies the references to the values of the original object/array.
+Spread Operator (...): This is the most common way to create a shallow copy of an array or object.
+```javascript
+const originalArray = [1, 2, [3, 4]];
+const copiedArray = [...originalArray];
+
+copiedArray[0] = 5; // Original array remains unchanged
+copiedArray[2][0] = 6; // Modifies nested array in both
+
+console.log(originalArray); // [1, 2, [6, 4]]
+console.log(copiedArray); // [5, 2, [6, 4]]
+```
+#### Deep Copy
+A deep copy creates a completely independent clone of the original object/array.
+Modifying the deep copy will not affect the original object/array.
+```javascript
+const originalObject = { a: 1, b: { c: 2 } };
+const copiedObject = JSON.parse(JSON.stringify(originalObject));
+
+copiedObject.b.c = 6; // Original object remains unchanged
+
+console.log(originalObject); // { a: 1, b: { c: 2 } }
+console.log(copiedObject); // { a: 1, b: { c: 6 } }
+```
