@@ -227,3 +227,40 @@ export default {
   }
 };
 ```
+### 17. Write a code in vuejs to add a task?
+```vue
+<template>
+  <div>
+    <input type="text" v-model="newItem" placeholder="Enter a new task" />
+    <button @click="addTask">Add Task</button>
+    <ul>
+      <li v-for="(item, index) in items" :key="index">{{ item }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: ["Task1", "Task2"],
+      newItem: ""
+    };
+  },
+  methods: {
+    addTask() {
+      if (this.newItem.trim() !== "") {
+        this.items.push(this.newItem);
+        this.newItem = "";
+      }
+    }
+  }
+};
+</script>
+
+<style scoped>
+button {
+  font-weight: bold;
+}
+</style>
+```
