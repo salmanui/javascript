@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Form</title>
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+      body{
+        font-family: "Open Sans", sans-serif;
+        background: linear-gradient(90deg, #f1f1f1, transparent);
+      }
+    .card {
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #000;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+     .card-holder, .card-expiration, .card-cvv {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .card-number{
+      font-size: 24px;
+    }
+    .card-phonenumber{
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .container{
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="app" class="container mt-4 pt-2">
+      <div class="row">
+        <div class="col-md-12 mb-4">
+          <div class="card">
+            <div class="d-flex justify-content-between mb-3">
+              <div
+                class="d-flex justify-content-between align-items-center"><img
+                  src="/icon-visa.png"
+                  width="40"></div>
+              <h5
+                class="text-white font-weight-bold">Credit
+                Card</h5></div>
+            <div class="card-number mb-3 text-white">{{ formattedCardNumber
+              }}</div>
+            <div class="row">
+              <div class="col-9">
+                <p class="text-white mb-1 small">Name</p>
+                <div class="card-holder mb-1">{{ cardHolder }}</div>
+                <div class="card-phonenumber text-white">{{ phoneNumber }}</div>
+              </div>
+              <div class="col-3 text-right">
+                <p class="text-white mb-1 small">Expiry Date</p>
+                <div class="card-expiration">{{ cardExpiration }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <form>
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" class="form-control" id="cardNumber"
+                v-model="cardNumber" maxlength="16"
+                placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-group">
+              <label for="cardHolder">Card Holder</label>
+              <input type="text" class="form-control" id="cardHolder"
+                v-model="cardHolder" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="cardExpiration">Expiration Date</label>
+              <input type="text" class="form-control" id="cardExpiration"
+                v-model="cardExpiration" placeholder="MM/YY">
+            </div>
+            <div class="form-group">
+              <label for="cardCvv">CVV</label>
+              <input type="text" class="form-control" id="cardCvv"
+                v-model="cardCvv" maxlength="3" placeholder="123">
+            </div>
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <select v-model="selectedCountryCode" class="form-control">
+                    <option v-for="country in countryCodes"
+                      :value="country.dial_code">
+                      {{ country.name }} ({{ country.dial_code }})
+                    </option>
+                  </select>
+                </div>
+                <input type="text" class="form-control" id="phoneNumber"
+                  v-model="phoneNumber" placeholder="1234567890">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    new Vue({
+      el: '#app',
+      data: {
+        cardNumber: '1234567890123456',
+        cardHolder: 'John Doe',
+        cardExpiration: '12/24',
+        cardCvv: '123',
+        selectedCountryCode: '+1',
+        phoneNumber: '9876541230',
+        countryCodes: [
+          { "name": "United States", "dial_code": "+1" },
+          { "name": "India", "dial_code": "+91" },
+          { "name": "United Kingdom", "dial_code": "+44" },
+          { "name": "Australia", "dial_code": "+61" },
+          { "name": "Canada", "dial_code": "+1" }
+          // Add more country codes as needed
+        ]
+      },
+      computed: {
+        formattedCardNumber() {
+          return this.cardNumber.replace(/(\d{4})(?=\d)/g, '$1- ').split('').join('  ');
+        }
+      }
+    });
+  </script>
+  </body>
+</html>
